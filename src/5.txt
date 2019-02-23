@@ -1,0 +1,156 @@
+Classfile /Users/Issac/workspaces/github/javabasic/src/com/interview/javabasic/collection/DuplicateAndOrderTest.class
+  Last modified Feb 20, 2019; size 780 bytes
+  MD5 checksum def8f2e00bca0463fb0f6130e0415f9b
+  Compiled from "DuplicateAndOrderTest.java"
+public class com.interview.javabasic.collection.DuplicateAndOrderTest
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #16.#25        // java/lang/Object."<init>":()V
+   #2 = Class              #26            // java/util/LinkedList
+   #3 = Methodref          #2.#25         // java/util/LinkedList."<init>":()V
+   #4 = String             #27            // 111
+   #5 = Methodref          #2.#28         // java/util/LinkedList.add:(Ljava/lang/Object;)Z
+   #6 = String             #29            // 222
+   #7 = String             #30            // 333
+   #8 = String             #31            // 444
+   #9 = String             #32            // 555
+  #10 = Fieldref           #33.#34        // java/lang/System.out:Ljava/io/PrintStream;
+  #11 = Methodref          #35.#36        // java/io/PrintStream.println:(Ljava/lang/Object;)V
+  #12 = Class              #37            // java/util/TreeSet
+  #13 = Methodref          #12.#25        // java/util/TreeSet."<init>":()V
+  #14 = Methodref          #12.#28        // java/util/TreeSet.add:(Ljava/lang/Object;)Z
+  #15 = Class              #38            // com/interview/javabasic/collection/DuplicateAndOrderTest
+  #16 = Class              #39            // java/lang/Object
+  #17 = Utf8               <init>
+  #18 = Utf8               ()V
+  #19 = Utf8               Code
+  #20 = Utf8               LineNumberTable
+  #21 = Utf8               main
+  #22 = Utf8               ([Ljava/lang/String;)V
+  #23 = Utf8               SourceFile
+  #24 = Utf8               DuplicateAndOrderTest.java
+  #25 = NameAndType        #17:#18        // "<init>":()V
+  #26 = Utf8               java/util/LinkedList
+  #27 = Utf8               111
+  #28 = NameAndType        #40:#41        // add:(Ljava/lang/Object;)Z
+  #29 = Utf8               222
+  #30 = Utf8               333
+  #31 = Utf8               444
+  #32 = Utf8               555
+  #33 = Class              #42            // java/lang/System
+  #34 = NameAndType        #43:#44        // out:Ljava/io/PrintStream;
+  #35 = Class              #45            // java/io/PrintStream
+  #36 = NameAndType        #46:#47        // println:(Ljava/lang/Object;)V
+  #37 = Utf8               java/util/TreeSet
+  #38 = Utf8               com/interview/javabasic/collection/DuplicateAndOrderTest
+  #39 = Utf8               java/lang/Object
+  #40 = Utf8               add
+  #41 = Utf8               (Ljava/lang/Object;)Z
+  #42 = Utf8               java/lang/System
+  #43 = Utf8               out
+  #44 = Utf8               Ljava/io/PrintStream;
+  #45 = Utf8               java/io/PrintStream
+  #46 = Utf8               println
+  #47 = Utf8               (Ljava/lang/Object;)V
+{
+  public com.interview.javabasic.collection.DuplicateAndOrderTest();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 12: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: new           #2                  // class java/util/LinkedList
+         3: dup
+         4: invokespecial #3                  // Method java/util/LinkedList."<init>":()V
+         7: astore_1
+         8: aload_1
+         9: ldc           #4                  // String 111
+        11: invokevirtual #5                  // Method java/util/LinkedList.add:(Ljava/lang/Object;)Z
+        14: pop
+        15: aload_1
+        16: ldc           #6                  // String 222
+        18: invokevirtual #5                  // Method java/util/LinkedList.add:(Ljava/lang/Object;)Z
+        21: pop
+        22: aload_1
+        23: ldc           #7                  // String 333
+        25: invokevirtual #5                  // Method java/util/LinkedList.add:(Ljava/lang/Object;)Z
+        28: pop
+        29: aload_1
+        30: ldc           #8                  // String 444
+        32: invokevirtual #5                  // Method java/util/LinkedList.add:(Ljava/lang/Object;)Z
+        35: pop
+        36: aload_1
+        37: ldc           #9                  // String 555
+        39: invokevirtual #5                  // Method java/util/LinkedList.add:(Ljava/lang/Object;)Z
+        42: pop
+        43: aload_1
+        44: ldc           #4                  // String 111
+        46: invokevirtual #5                  // Method java/util/LinkedList.add:(Ljava/lang/Object;)Z
+        49: pop
+        50: getstatic     #10                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        53: aload_1
+        54: invokevirtual #11                 // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+        57: new           #12                 // class java/util/TreeSet
+        60: dup
+        61: invokespecial #13                 // Method java/util/TreeSet."<init>":()V
+        64: astore_2
+        65: aload_2
+        66: ldc           #4                  // String 111
+        68: invokevirtual #14                 // Method java/util/TreeSet.add:(Ljava/lang/Object;)Z
+        71: pop
+        72: aload_2
+        73: ldc           #6                  // String 222
+        75: invokevirtual #14                 // Method java/util/TreeSet.add:(Ljava/lang/Object;)Z
+        78: pop
+        79: aload_2
+        80: ldc           #7                  // String 333
+        82: invokevirtual #14                 // Method java/util/TreeSet.add:(Ljava/lang/Object;)Z
+        85: pop
+        86: aload_2
+        87: ldc           #8                  // String 444
+        89: invokevirtual #14                 // Method java/util/TreeSet.add:(Ljava/lang/Object;)Z
+        92: pop
+        93: aload_2
+        94: ldc           #9                  // String 555
+        96: invokevirtual #14                 // Method java/util/TreeSet.add:(Ljava/lang/Object;)Z
+        99: pop
+       100: aload_2
+       101: ldc           #4                  // String 111
+       103: invokevirtual #14                 // Method java/util/TreeSet.add:(Ljava/lang/Object;)Z
+       106: pop
+       107: getstatic     #10                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       110: aload_2
+       111: invokevirtual #11                 // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+       114: return
+      LineNumberTable:
+        line 14: 0
+        line 15: 8
+        line 16: 15
+        line 17: 22
+        line 18: 29
+        line 19: 36
+        line 20: 43
+        line 21: 50
+        line 23: 57
+        line 24: 65
+        line 25: 72
+        line 26: 79
+        line 27: 86
+        line 28: 93
+        line 29: 100
+        line 30: 107
+        line 32: 114
+}
+SourceFile: "DuplicateAndOrderTest.java"
