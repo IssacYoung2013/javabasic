@@ -5,29 +5,28 @@ package com.interview.javabasic.algorithm;
  * date:    2019-02-23
  * desc:
  */
-public class SelectSort {
-    private SelectSort() {
+public class SelectionSort {
+    private SelectionSort() {
     }
 
     public static void sort(Comparable[] arr) {
 
         int n = arr.length;
-
         for (int i = 0; i < n; i++) {
             int minIndex = i;
             for (int j = i + 1; j < n; j++) {
                 // 查询最小数
-                if(arr[minIndex].compareTo(arr[j]) > 0) {
+                if (arr[minIndex].compareTo(arr[j]) > 0) {
                     minIndex = j;
                 }
             }
-
-            swap(arr,i,minIndex);
+            swap(arr, i, minIndex);
         }
     }
 
     /**
      * 交换
+     *
      * @param arr
      * @param i
      * @param j
@@ -39,12 +38,11 @@ public class SelectSort {
     }
 
     public static void main(String[] args) {
-        Integer[] arr = SortTestHelper.generateRandomArray(10,67,786);
-        SortTestHelper.printArray(arr);
-        sort(arr);
-        SortTestHelper.printArray(arr);
+        int N = 10000;
+        String packageName = "com.interview.javabasic.algorithm.";
+        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, N);
+        SortTestHelper.testSort(packageName + "SelectionSort",arr);
 
         return;
     }
-
 }
