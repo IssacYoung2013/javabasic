@@ -7,40 +7,38 @@ import java.util.Arrays;
  * date:    2019-02-23
  * desc:
  */
-public class MergeSort {
-    private MergeSort() {
+public class MergeSort2 {
+    private MergeSort2() {
     }
 
     public static void sort(Comparable[] arr) {
 
         int n = arr.length;
-
-        mergeSort(arr, 0, n - 1);
+        Comparable[] aux = new Comparable[n];
+        mergeSort(arr, aux, 0, n - 1);
 
     }
 
-    private static void mergeSort(Comparable[] arr, int l, int r) {
+    private static void mergeSort(Comparable[] arr, Comparable[] aux, int l, int r) {
 
-//        if (l >= r) {
-//            return;
-//        }
-        if(r -l <= 15) {
+        if (r - l <= 15) {
             InsertionSort.sort(arr);
             return;
         }
 
         int mid = (l + r) / 2;
-        mergeSort(arr, l, mid);
-        mergeSort(arr, mid + 1, r);
+        mergeSort(arr, aux, l, mid);
+        mergeSort(arr, aux, mid + 1, r);
 
         if (arr[mid].compareTo(arr[mid + 1]) > 0) {
-            merge(arr, l, mid, r);
+            merge(arr, aux, l, mid, r);
         }
     }
 
-    private static void merge(Comparable[] arr, int l, int mid, int r) {
+    private static void merge(Comparable[] arr, Comparable[] aux, int l, int mid, int r) {
 
-        Comparable[] aux = Arrays.copyOfRange(arr, l, r + 1);
+        System.arraycopy(arr,l,aux,l,r-l+1);
+
         int i = l, j = mid + 1;
         for (int k = l; k <= r; k++) {
             if (i > mid) {
@@ -73,12 +71,10 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int N = 5;
+        int N = 50000;
         String packageName = "com.interview.javabasic.algorithm.";
         Integer[] arr1 = SortTestHelper.generateRandomArray(N, 0, N);
-        SortTestHelper.printArray(arr1);
-        SortTestHelper.testSort(packageName + "MergeSort", arr1);
-        SortTestHelper.printArray(arr1);
+        SortTestHelper.testSort(packageName + "MergeSort2", arr1);
         return;
     }
 }

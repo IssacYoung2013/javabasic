@@ -19,6 +19,8 @@ public class Main {
         Integer[] arr4 = Arrays.copyOf(arr1,arr1.length);
         Integer[] arr41 = Arrays.copyOf(arr1,arr1.length);
         Integer[] arr42 = Arrays.copyOf(arr1,arr1.length);
+        Integer[] arr43 = Arrays.copyOf(arr1,arr1.length);
+        Integer[] arr44 = Arrays.copyOf(arr1,arr1.length);
 
         System.out.println("Test for random Array");
         SortTestHelper.testSort(packageName + "SelectionSort", arr1);
@@ -28,6 +30,9 @@ public class Main {
         SortTestHelper.testSort(packageName + "QuickSort", arr4);
         SortTestHelper.testSort(packageName + "QuickSort2", arr41);
         SortTestHelper.testSort(packageName + "QuickSort3", arr42);
+        SortTestHelper.testSort(packageName + "HeapSort1", arr43);
+        SortTestHelper.testSort(packageName + "HeapSort2", arr44);
+
 
         System.out.println("Test for nearlyOrder Array");
 
@@ -35,11 +40,16 @@ public class Main {
         Integer[] arr6 = Arrays.copyOf(arr5,arr5.length);
         Integer[] arr7 = Arrays.copyOf(arr5,arr5.length);
         Integer[] arr8 = Arrays.copyOf(arr5,arr5.length);
+        Integer[] arr81 = Arrays.copyOf(arr5,arr5.length);
+        Integer[] arr82 = Arrays.copyOf(arr5,arr5.length);
 
         SortTestHelper.testSort(packageName + "SelectionSort", arr5);
         SortTestHelper.testSort(packageName + "InsertionSort", arr6);
         SortTestHelper.testSort(packageName + "MergeSort", arr7);
         SortTestHelper.testSort(packageName + "QuickSort", arr8);
+        SortTestHelper.testSort(packageName + "HeapSort1", arr81);
+        SortTestHelper.testSort(packageName + "HeapSort2", arr82);
+
 
 
 

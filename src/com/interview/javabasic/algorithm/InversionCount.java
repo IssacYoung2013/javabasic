@@ -7,40 +7,36 @@ import java.util.Arrays;
  * date:    2019-02-23
  * desc:
  */
-public class MergeSort {
-    private MergeSort() {
+public class InversionCount {
+    private InversionCount() {
     }
 
-    public static void sort(Comparable[] arr) {
+    public static long count(Comparable[] arr) {
 
         int n = arr.length;
 
-        mergeSort(arr, 0, n - 1);
+        return countInversion(arr, 0, n - 1);
 
     }
 
-    private static void mergeSort(Comparable[] arr, int l, int r) {
-
-//        if (l >= r) {
-//            return;
-//        }
-        if(r -l <= 15) {
-            InsertionSort.sort(arr);
-            return;
+    private static long countInversion(Comparable[] arr, int l, int r) {
+        if (r <= l) {
+            return 0L;
         }
 
-        int mid = (l + r) / 2;
-        mergeSort(arr, l, mid);
-        mergeSort(arr, mid + 1, r);
+        int mid = l + (r-l) / 2;
 
-        if (arr[mid].compareTo(arr[mid + 1]) > 0) {
-            merge(arr, l, mid, r);
-        }
+        long res1 = countInversion(arr, l, mid);
+        long res2 = countInversion(arr, mid + 1, r);
+
+        return res1 + res2 + count(arr, l, mid, r);
     }
 
-    private static void merge(Comparable[] arr, int l, int mid, int r) {
+    private static long count(Comparable[] arr, int l, int mid, int r) {
 
         Comparable[] aux = Arrays.copyOfRange(arr, l, r + 1);
+        long inversionCount = 0L;
+
         int i = l, j = mid + 1;
         for (int k = l; k <= r; k++) {
             if (i > mid) {
@@ -49,14 +45,17 @@ public class MergeSort {
             } else if (j > r) {
                 arr[k] = aux[i - l];
                 i++;
-            } else if (aux[i - l].compareTo(arr[j - l]) < 0) {
+            } else if (aux[i - l].compareTo(arr[j - l]) <= 0) {
                 arr[k] = aux[i - l];
                 i++;
             } else {
+                inversionCount += (long) (mid - i + 1);
                 arr[k] = aux[j - l];
                 j++;
+
             }
         }
+        return inversionCount;
     }
 
     /**
@@ -76,8 +75,11 @@ public class MergeSort {
         int N = 5;
         String packageName = "com.interview.javabasic.algorithm.";
         Integer[] arr1 = SortTestHelper.generateRandomArray(N, 0, N);
+//        Integer[] arr1 = SortTestHelper.generateNearlyOrderArray(N, 0);
         SortTestHelper.printArray(arr1);
-        SortTestHelper.testSort(packageName + "MergeSort", arr1);
+
+        System.out.println("Inversion Count : " + count(arr1));
+
         SortTestHelper.printArray(arr1);
         return;
     }
